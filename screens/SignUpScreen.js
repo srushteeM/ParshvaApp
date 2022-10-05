@@ -9,12 +9,13 @@ import {
   Image,
   Alert
 } from 'react-native';
-import Button from "../components/Button"
-export default class LoginScreen extends Component {
+
+export default class SignUpScreen extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+   this.state = {
+      fullName: '',
       email   : '',
       password: '',
     }
@@ -28,8 +29,16 @@ export default class LoginScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/male-user/ultraviolet/50/3498db'}}/>
+          <TextInput style={styles.inputs}
+              placeholder="Full name"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(fullName) => this.setState({fullName})}/>
+        </View>
+
+        <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
-          <Button/>
           <TextInput style={styles.inputs}
               placeholder="Email"
               keyboardType="email-address"
@@ -46,16 +55,8 @@ export default class LoginScreen extends Component {
               onChangeText={(password) => this.setState({password})}/>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('login')}>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight style={styles.buttonContainer} onPress={() => this.onClickListener('restore_password')}>
-            <Text>Forgot your password?</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight style={styles.buttonContainer} onPress={() => this.onClickListener('register')}>
-            <Text>Register</Text>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+          <Text style={styles.signUpText}>Sign up</Text>
         </TouchableHighlight>
       </View>
     );
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#DCDCDC',
+    backgroundColor: '#00b5ec',
   },
   inputContainer: {
       borderBottomColor: '#F5FCFF',
@@ -101,10 +102,10 @@ const styles = StyleSheet.create({
     width:250,
     borderRadius:30,
   },
-  loginButton: {
-    backgroundColor: "#00b5ec",
+  signupButton: {
+    backgroundColor: "#FF4DFF",
   },
-  loginText: {
+  signUpText: {
     color: 'white',
   }
 });

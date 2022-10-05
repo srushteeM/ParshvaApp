@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import SignUpScreen from "./screens/SignUpScreen"
-class App extends Component {
+
+class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,12 +10,11 @@ class App extends Component {
 
   render() {
     return (
-     <SignUpScreen/>
+      <View>
+        <Text>My Button </Text>
+      </View>
     );
   }
 }
 
-export default App;
-
-
-
+export default Button;
