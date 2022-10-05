@@ -9,7 +9,7 @@ import {
   Image,
   Alert
 } from 'react-native';
-import Button from "../components/Button"
+
 export default class LoginScreen extends Component {
 
   constructor(props) {
@@ -29,7 +29,7 @@ export default class LoginScreen extends Component {
       <View style={styles.container}>
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
-          <Button/>
+       
           <TextInput style={styles.inputs}
               placeholder="Email"
               keyboardType="email-address"
